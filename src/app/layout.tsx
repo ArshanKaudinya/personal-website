@@ -1,6 +1,7 @@
 import "./globals.css";
 import { ReactNode } from "react";
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: "Arshan Kaudinya",
@@ -47,6 +48,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body className="scroll-smooth bg-black/90 text-white  font-grotesk">
         {children}
+        <Analytics />
       </body>
     </html>
   );
