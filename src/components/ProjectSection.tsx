@@ -15,7 +15,7 @@ const projects: Project[] = [
     title: "Promptly",
     desc: "A friction-less prompt engineering browser extension, completely customizable, one click rewrites to supercharge your prompts. Live and closed source with 50+ users in the first week of launch (as of 03/08/25).",
     href: "https://usepromptlyai.com",
-    stack: ["Next.js", "Tailwind", "FastAPI", "OpenAI API", "Supabase", "Redis", "Render", "Chrome Extensions", "Polar, Zoho, Resend, Cloudflare"],
+    stack: ["Next.js", "Tailwind", "FastAPI", "OpenAI API", "Supabase", "Redis", "Render", "Chrome Extensions", "Polar", "Resend", "Cloudflare"],
     date: "2025",
   },
   {
