@@ -5,14 +5,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Arshan Kaudinya",
   description:
-    "Founder-grade portfolio. Building Promptly, Computer Science @ VIT. Product builder and ambitious creator.",
+    "curious what Arshan is up to?",
   icons: { 
     icon: "/pfp.jpg" 
   },
   openGraph: {
     title: "Arshan Kaudinya",
     description:
-      "Founder-grade portfolio. Building Promptly, Computer Science @ VIT.",
+      "curious what Arshan is up to?",
     url: "https://arshankaudinya.com",
     siteName: "Arshan Kaudinya",
     images: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Arshan Kaudinya",
     description:
-      "Founder-grade portfolio. Building Promptly, Computer Science @ VIT.",
+      "curious what Arshan is up to?",
     images: ["https://vsqruzzlzbuyzgatbzeo.supabase.co/storage/v1/object/sign/misc/pfp.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8zNGNiZDIzMi1iMjhhLTQwZDktOGYxNS1iNDMxMDQxMTJiNWYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtaXNjL3BmcC5qcGciLCJpYXQiOjE3NTQxMTgwNTEsImV4cCI6MTg0ODcyNjA1MX0.eavAC-EHwBiy4_--Gw9_cpwJRvvKf0IoOzy4WH45mRE"]
   }
 };
