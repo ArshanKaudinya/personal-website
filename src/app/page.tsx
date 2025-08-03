@@ -16,9 +16,9 @@ export default function Home() {
       <AboutMe />
       <div className="w-full border-t border-gray-600 mb-8" />
       <StackIcons />
-      <WorkWithMe />
-      <div className="w-full border-t border-gray-600 mb-10" />
       <ProjectsSection />
+      <div className="w-full border-t border-gray-600 mb-10" />
+      <WorkWithMe />
       {/* <BlogSection /> */}
       <div className="w-full border-t border-gray-600 mb-8 mt-8" />
       <ReachOut />
