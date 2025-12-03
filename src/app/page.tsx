@@ -6,6 +6,7 @@ import ProjectsSection from "@/components/ProjectSection";
 import AboutMe from "@/components/AboutMe";
 import WorkWithMe from "@/components/WorkWithMe";
 import ReachOut from "@/components/ReachOut";
+import BlogSection from "@/components/BlogSection";
 
 export default function Home() {
   return (
@@ -15,8 +16,9 @@ export default function Home() {
       <div className="w-full border-t border-gray-600 mb-4" />
       <AboutMe />
       <div className="w-full border-t border-gray-600 mb-8" />
-      <StackIcons />
+      <BlogSection />
       <ProjectsSection />
+      <StackIcons />
       <div className="w-full border-t border-gray-600 mb-10" />
       <WorkWithMe />
       {/* <BlogSection /> */}

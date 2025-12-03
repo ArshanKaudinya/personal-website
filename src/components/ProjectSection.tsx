@@ -13,7 +13,7 @@ type Project = {
 const projects: Project[] = [
   {
     title: "Promptly",
-    desc: "A friction-less prompt engineering browser extension, completely customizable, one click rewrites to supercharge your prompts. Live and closed source with 50+ users in the first week of launch (as of 03/08/25).",
+    desc: "A friction-less prompt engineering browser extension, completely customizable, one click rewrites to supercharge your prompts. Live and closed source with 100+ users(as of 18/11/25).",
     href: "https://usepromptlyai.com",
     stack: ["Next.js", "Tailwind", "FastAPI", "OpenAI API", "Supabase", "Redis", "Render", "Chrome Extensions", "Polar", "Resend", "Cloudflare"],
     date: "2025",
@@ -39,7 +39,7 @@ export default function ProjectsSection() {
     <section className="w-full max-w-3xl">
       <h2 className="text-xl font-semibold mb-4 ml-[0.1rem]">Notable Projects</h2>
       <div className="flex flex-col gap-6">
-        {projects.map(({ title, desc, href, stack, date, github }) => (
+        {projects.map(({ title, desc, href, date, github }) => (
           <div
             key={title}
             className="bg-white/3 border border-white/20 rounded-xl p-6 group hover:border-accent/70 transition-colors"
@@ -77,7 +77,7 @@ export default function ProjectsSection() {
               </span>
             </div>
             <p className="text-gray-300 text-sm md:text-base leading-relaxed mt-1">{desc}</p>
-            {stack && (
+            {/* {stack && (
               <div className="flex flex-wrap gap-2 mt-4">
                 {stack.map((tech) => (
                   <span
@@ -88,7 +88,7 @@ export default function ProjectsSection() {
                   </span>
                 ))}
               </div>
-            )}
+            )} */}
           </div>
         ))}
       </div>

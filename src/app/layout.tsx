@@ -12,8 +12,6 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Arshan Kaudinya",
-    description:
-      "curious what Arshan is up to?",
     url: "https://arshankaudinya.com",
     siteName: "Arshan Kaudinya",
     images: [
@@ -40,10 +38,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <link
-          href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@300,400,500,700&display=swap"
-          rel="stylesheet"
-        />
+        <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@300,400,500,700&display=swap" rel="stylesheet" />
+        <link href="https://api.fontshare.com/v2/css?f[]=lora@400,401,500,501&display=swap" rel="stylesheet" /> 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
       </head>
       <body className="scroll-smooth bg-black/90 text-white  font-grotesk">

@@ -1,27 +1,59 @@
-type Post = { title: string; href: string };
+"use client";
 
-const posts: Post[] = [
-  { title: "Shipping an MVP in 3 Weeks", href: "/blog/mvp-3-weeks" },
-  { title: "Bootstrapping Promptly: Lessons Learned", href: "/blog/bootstrapping" }
+import Link from "next/link";
+import { CaretRight } from "phosphor-react";
+
+type BlogItem = {
+  slug: string;
+  title: string;
+  subtitle?: string;
+};
+
+const BLOGS: BlogItem[] = [
+  {
+    slug: "building-promptly",
+    title: "Building Promptly",
+    subtitle: "Building a SaaS in College."
+  },
 ];
 
-export default function BlogSection() {
-  if (!posts.length) return null;
+export default function Blogs() {
   return (
-    <section className="mt-16 flex flex-col items-center">
-      <h2 className="text-2xl font-semibold mb-8">Blog</h2>
-      <ul className="space-y-4">
-        {posts.slice(0, 3).map(({ title, href }) => (
-          <li key={title}>
-            <a
-              href={href}
-              className="text-gray-300 hover:text-accent transition"
+    <section className="mx-auto mt-10 mb-8 max-w-3xl">
+        <h2 className="text-xl font-semibold mb-4 ml-[0.1rem]">
+          Blog
+        </h2>
+
+        <div className="space-y-3">
+          {BLOGS.map((post) => (
+            <Link
+              key={post.slug}
+              href={`/blogs/${post.slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                group flex items-center justify-between
+                rounded-md px-4 py-3
+              hover:bg-white/2
+                border border-white/10 hover:border-white/20
+                transition-colors
+              "
             >
-              {title}
-            </a>
-          </li>
-        ))}
-      </ul>
+              <div className="flex-1">
+                <p className="text-sm md:text-base font-medium text-gray-200 group-hover:underline">
+                  {post.title}
+                </p>
+                {post.subtitle && (
+                  <p className="mt-0.5 text-xs md:text-sm text-gray-400">
+                    {post.subtitle}
+                  </p>
+                )}
+              </div>
+
+              <CaretRight className="ml-3 h-4 w-4 opacity-60 transition-all group-hover:translate-x-0.5 group-hover:opacity-100" />
+            </Link>
+          ))}
+        </div>
     </section>
   );
 }

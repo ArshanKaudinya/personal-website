@@ -39,9 +39,9 @@ export default function AboutMe() {
         <p className="transition-opacity duration-500 ease-out">
           <span className="font-semibold">The only thing out of my control is consistent change.</span><br />
           <br />
-          Hey, I&apos;m Arshan Kaudinya, I&apos;m building Promptly and
-          always working on how I shape my universe. I&apos;m into
-          tech, philosophy, fitness and optimizing how I live my life.<br />
+          Hey, I&apos;m Arshan Kaudinya, I&apos;m building Archon, working on tech that actually interests me,
+          and shaping a version of myself I can respect. I&apos;m into
+          tech, philosophy, fitness and the broader project of understanding how to live well.<br />
           <br />
           Everyone seems to be{" "}
           <span className="italic">&quot;building the next big thing&quot;</span>
@@ -52,8 +52,6 @@ export default function AboutMe() {
           learn from them, see the world through their eyes and understand how
           their universe works. Everyone lives differently beautiful lives, I
           want to be a part of them all.<br />
-          <br />
-          <span className="italic">And those who were seen dancing were thought to be insane by those who could not hear the music.</span><br /> - Nietzsche
         </p>
 
         {/* blur & gradient overlay when collapsed */}
