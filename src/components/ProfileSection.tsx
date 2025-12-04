@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function ProfileSection() {
   return (
-    <section className="flex flex-col items-left md:flex-row md:items-center md:justify-left gap-8 mt-8 mb-8">
+    <section className="flex flex-col items-center md:flex-row md:items-left md:justify-left gap-8 mt-8 mb-8">
        <Image
-          src="https://vsqruzzlzbuyzgatbzeo.supabase.co/storage/v1/object/sign/misc/pfp(1).jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8zNGNiZDIzMi1iMjhhLTQwZDktOGYxNS1iNDMxMDQxMTJiNWYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtaXNjL3BmcCgxKS5qcGciLCJpYXQiOjE3NTQyMDgxNTUsImV4cCI6MTg0ODgxNjE1NX0.fH8zw4ZkbG7DQCFFGh36qoic6UKR6cJawRMIuavxoM8"
+          src="/pfp.jpg"
           alt="Arshan Kaudinya"
           width={160}
           height={160}

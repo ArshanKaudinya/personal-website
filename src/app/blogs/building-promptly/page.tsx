@@ -9,7 +9,7 @@ export default function BuildingPromptly() {
       className="px-8 md:px-0 max-w-2xl mx-auto text-md pt-18 pb-15 scroll-smooth text-gray-300 leading-8"
       style={{ fontFamily: "Lora, serif" }}
     >
-      <div className="w-full h-48 md:h-48 relative rounded-xl overflow-hidden mb-12">
+      <div className="w-full h-32 md:h-48 relative rounded-xl overflow-hidden mb-12">
         <Image
           src="/promptly/banner.jpg"
           alt="Promptly Banner"
@@ -36,7 +36,7 @@ export default function BuildingPromptly() {
         </span>
       </p>
 
-      <p className="mb-6">
+      <p className="md:mb-6">
         I started with the smallest possible step —{" "}
         <span className="italic">a button that sends my raw prompt to my backend.</span>{" "}
         The challenge was that every AI website has its own DOM structure. I had
@@ -54,7 +54,7 @@ export default function BuildingPromptly() {
       </p>
 
       {/* Flow Image */}
-      <div className="w-full h-100 relative rounded-xl overflow-hidden my-6">
+      <div className="w-full h-100 relative rounded-xl overflow-hidden md:my-6">
         <Image
           src="/promptly/flow.png"
           alt="Promptly Flow Diagram"

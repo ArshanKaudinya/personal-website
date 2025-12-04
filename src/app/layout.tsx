@@ -2,6 +2,7 @@ import "./globals.css";
 import { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next"
+import GlobalLoader from "@/components/GlobalLoader"
 
 export const metadata: Metadata = {
   title: "Arshan Kaudinya",
@@ -42,7 +43,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link href="https://api.fontshare.com/v2/css?f[]=lora@400,401,500,501&display=swap" rel="stylesheet" /> 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
       </head>
-      <body className="scroll-smooth bg-black/90 text-white  font-grotesk">
+      <body className="scroll-smooth bg-black/90 text-white font-grotesk">
+        <GlobalLoader />
         {children}
         <Analytics />
       </body>
