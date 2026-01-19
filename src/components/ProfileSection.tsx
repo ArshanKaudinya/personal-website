@@ -16,7 +16,7 @@ export default function ProfileSection() {
           arshan kaudinya
         </h1>
         <p className="text-gray-400 text-base md:text-lg font-mono">
-          founder & student | cs 28'
+          founder & student | cs 28&apos;
         </p>
         <p className="text-gray-300 text-sm md:text-base max-w-2xl leading-relaxed">
           completing the incomplete.
