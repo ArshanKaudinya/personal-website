@@ -26,7 +26,7 @@ export default function AboutMe() {
   }, []);
 
   return (
-    <section className="mx-auto mt-8 mb-4 px-3 text-gray-300 text-base md:text-lg leading-relaxed">
+    <section className="mx-auto mb-12 text-gray-300 text-sm md:text-base leading-relaxed">
       <div
         ref={ref}
         style={{
@@ -37,72 +37,67 @@ export default function AboutMe() {
         className="relative overflow-hidden"
       >
         <p className="transition-opacity duration-500 ease-out">
-          <span className="font-semibold">The only thing out of my control is consistent change.</span><br />
+          <span className="font-grotesk font-bold text-accent">the only thing out of my control is consistent change.</span><br />
           <br />
-          Hey, I&apos;m Arshan Kaudinya, I&apos;m building Archon, working on tech that actually interests me,
-          and shaping a version of myself I can respect. I&apos;m into
+          hey, i&apos;m arshan kaudinya, i&apos;m working on a startup, tech that actually interests me,
+          and shaping a version of myself i can respect. i&apos;m into
           tech, philosophy, fitness and the broader project of understanding how to live well.<br />
           <br />
-          Everyone seems to be{" "}
+          everyone seems to be{" "}
           <span className="italic">&quot;building the next big thing&quot;</span>
-          &nbsp; I&apos;m building the next big me.<br />
-          I&apos;m driven by the need to outdo who I was yesterday. More than money or status, what matters to me is the person I&apos;m becoming.<br />
+          &nbsp; i&apos;m building the next big me.<br />
+          i&apos;m driven by the need to outdo who i was yesterday. more than money or status, what matters to me is the person i&apos;m becoming.<br />
           <br />
-          Except the narcissistic tendencies, I do genuinely love to talk to new people, I love to
+          except the narcissistic tendencies, i do genuinely love to talk to new people, i love to
           learn from them, see the world through their eyes and understand how
-          their universe works. Everyone lives differently beautiful lives, I
+          their universe works. everyone lives differently beautiful lives, i
           want to be a part of them all.<br />
         </p>
 
-        {/* blur & gradient overlay when collapsed */}
         {!open && (
           <div
             className="
               pointer-events-none absolute inset-x-0 bottom-0
-              h-20  
-              bg-gradient-to-b from-transparent via-black/5 to-black/80
-              /* horizontal fade-out on both sides */
-              [mask-image:linear-gradient(to_right,transparent,black,transparent)]
-              [-webkit-mask-image:linear-gradient(to_right,transparent,black,transparent)]
+              h-20
+              bg-gradient-to-b from-transparent via-[#0a0a0a]/50 to-[#0a0a0a]
               transition-opacity duration-500
             "
           />
         )}
-        {/* Floating clickable button (collapsed) */}
         {!open && (
           <button
             onClick={() => setOpen(true)}
             aria-expanded={open}
             className="
               group absolute bottom-1 left-1/2 -translate-x-1/2 z-20
-              px-3 rounded-md text-slate-100 text-sm font-medium
-              shadow transition-all duration-300 ease-out
+              px-4 py-1.5 text-gray-400 text-xs font-medium
+              border border-gray-800 bg-[#0a0a0a] hover:border-[#6c6499] hover:text-[#6c6499]
+              transition-all duration-300 ease-out
               cursor-pointer
-              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60
+              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6c6499]/30
               flex items-center gap-1
             "
-            style={{ boxShadow: "0 4px 12px 0 rgba(0,0,0,0.18)" }}
           >
-            <span className="transition-opacity duration-300">Read more</span>
-            <ArrowDown className="h-4 w-4 transition-transform duration-200 ease group-hover:translate-y-0.5" />
+            <span>read more</span>
+            <ArrowDown className="h-3 w-3 flex-shrink-0" />
           </button>
         )}
       </div>
 
-      {/* toggle button (expanded) */}
       {open && (
         <button
           onClick={() => setOpen(false)}
           aria-expanded={open}
           className="
-            group mx-auto mt-2 flex items-center gap-1 px-5 py-1.5 rounded-md
-            text-slate-100 text-sm font-medium cursor-pointer
-            shadow transition-all duration-300 ease-out
-            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60
+            group mx-auto mt-3 flex items-center gap-1 px-4 py-1.5
+            text-gray-400 text-xs font-medium cursor-pointer
+            border border-gray-800 bg-[#0a0a0a] hover:border-[#6c6499] hover:text-[#6c6499]
+            transition-all duration-300 ease-out
+            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6c6499]/30
           "
         >
-          Show less
-          <ArrowDown className="rotate-180 h-4 w-4 group-hover:-translate-y-0.5" />
+          show less
+          <ArrowDown className="rotate-180 h-3 w-3 flex-shrink-0" />
         </button>
       )}
     </section>

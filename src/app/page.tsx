@@ -10,22 +10,19 @@ import BlogSection from "@/components/BlogSection";
 
 export default function Home() {
   return (
-    <main className="px-8 md:px-0 max-w-2xl mx-auto pt-18 pb-15 space-y-12 scroll-smooth">
+    <main className="px-6 md:px-8 max-w-3xl mx-auto pt-20 pb-20 scroll-smooth">
       <ProfileSection />
       <SocialLinks />
-      <div className="w-full border-t border-gray-600 mb-4" />
       <AboutMe />
-      <div className="w-full border-t border-gray-600 mb-8" />
+      <div className="w-full h-px bg-gray-800 my-12" />
       <BlogSection />
       <ProjectsSection />
       <StackIcons />
-      <div className="w-full border-t border-gray-600 mb-10" />
+      <div className="w-full h-px bg-gray-800 my-12" />
       <WorkWithMe />
-      {/* <BlogSection /> */}
-      <div className="w-full border-t border-gray-600 mb-8 mt-8" />
       <ReachOut />
-      <footer className="text-center text-gray-600 text-sm mt-12">
-        © {new Date().getFullYear()} Arshan Kaudinya
+      <footer className="text-center text-gray-700 text-xs font-mono mt-16">
+        © {new Date().getFullYear()} arshan kaudinya
       </footer>
     </main>
   );

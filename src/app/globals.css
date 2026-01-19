@@ -1,16 +1,33 @@
 @import "tailwindcss";
 
-@theme {  
+@theme {
   --font-grotesk: "Cabinet Grotesk", "sans-serif";
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #6c6499 #0a0a0a;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #6c6499;
+  border-radius: 4px;
+}
 
 .loader {
   width: 2rem;
   height: 2rem;
   clear: both;
   margin: 1rem auto;
-  border: 0.0625rem #fff solid;
+  border: 0.0625rem #6c6499 solid;
   border-radius: .25rem;
   overflow: hidden;
   position: relative;
@@ -27,14 +44,14 @@
 }
 
 .loader:before {
-  border-top: 0.375rem #fff solid;
+  border-top: 0.375rem #6c6499 solid;
   top: -0.1875rem;
   left: calc( -50% - 0.1875rem );
   transform-origin: right center;
 }
 
 .loader:after {
-  border-bottom: 0.375rem #fff solid;
+  border-bottom: 0.375rem #6c6499 solid;
   top: 0.1875rem;
   right: calc( -50% - 0.1875rem );
   transform-origin: left center;

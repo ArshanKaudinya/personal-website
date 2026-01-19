@@ -20,7 +20,7 @@ const socials = [
 
 export default function SocialLinks() {
   return (
-      <section className="flex justify-start ml-[0.8rem] gap-5 mb-2">
+      <section className="flex justify-start gap-6 mb-6">
         {socials.map(({ href, label, icon }) => (
           <a
             key={label}
@@ -28,9 +28,9 @@ export default function SocialLinks() {
             aria-label={label}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-accent transition"
+            className="text-gray-500 hover:text-[#6c6499] transition-all duration-300"
           >
-            <i className={`${icon} text-xl`} title={label}></i>
+            <i className={`${icon} text-2xl`} title={label}></i>
           </a>
         ))}
       </section>

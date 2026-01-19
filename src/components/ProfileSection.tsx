@@ -2,24 +2,24 @@ import Image from "next/image";
 
 export default function ProfileSection() {
   return (
-    <section className="flex flex-col items-center md:flex-row md:items-left md:justify-left gap-8 mt-8 mb-8">
+    <section className="flex flex-col md:flex-row items-start gap-10 mb-12">
        <Image
           src="/pfp.jpg"
           alt="Arshan Kaudinya"
-          width={160}
-          height={160}
-          className="rounded-md border-2 border-accent object-cover"
+          width={140}
+          height={140}
+          className="rounded-sm object-cover transition-all duration-300"
           priority
         />
-      <div className="flex flex-col md:mt-1 items-center md:items-start gap-1">
-        <h1 className="text-3xl md:text-5xl font-grotesk-400 font-bold">
-          Arshan&nbsp;Kaudinya
+      <div className="flex flex-col gap-3">
+        <h1 className="text-4xl md:text-6xl font-grotesk font-bold tracking-tight leading-none">
+          arshan kaudinya
         </h1>
-        <p className="text-accent text-lg md:text-lg">
-          Founder & Student&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;CS 28&apos;&nbsp;
+        <p className="text-gray-400 text-base md:text-lg font-mono">
+          founder & student | cs 28'
         </p>
-        <p className="max-w-xl text-center md:text-left text-gray-400">
-          Completing the Incomplete. 
+        <p className="text-gray-300 text-sm md:text-base max-w-2xl leading-relaxed">
+          completing the incomplete.
         </p>
       </div>
     </section>

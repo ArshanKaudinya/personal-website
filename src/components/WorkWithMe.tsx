@@ -1,21 +1,29 @@
 export default function WorkWithMe() {
     return (
-      <section className="mx-auto mt-4 px-1 mb-10">
-        <h2 className="text-xl font-semibold mb-1 text-accent">Work With Me</h2>
-        <p className="text-gray-300 mb-2">
-          I’m open to:
+      <section className="mx-auto mb-12">
+        <h2 className="text-2xl font-grotesk font-bold mb-6 tracking-tight flex items-center gap-2">
+          <span className="text-[#6c6499]">&gt;</span> work
+        </h2>
+        <p className="text-gray-300 mb-3 text-sm">
+          open to:
         </p>
-        <ul className="mb-3 list-disc list-inside text-gray-400">
-          <li>Freelance engineering, consulting and AI projects</li>
-          <li>Internships that have a genuinely high-growth potential or are really interesting</li>
+        <ul className="mb-4 space-y-1 text-gray-400 text-sm">
+          <li className="flex items-start gap-2">
+            <span className="text-[#6c6499]">★</span>
+            <span>freelance engineering, consulting and ai projects</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-[#6c6499]">★</span>
+            <span>internships that have genuinely high-growth potential or are really interesting</span>
+          </li>
         </ul>
-        <p className="text-gray-400">
-          If you have an opportunity you think I&apos;d be interested in or want to build something ambitious—<br />
+        <p className="text-gray-400 text-sm">
+          if you have an opportunity you think i&apos;d be interested in or want to build something ambitious,{" "}
           <a
             href="#reachout"
-            className="text-accent underline"
+            className="text-[#6c6499] hover:underline transition-colors duration-300"
           >
-            reach out directly
+            reach out
           </a>
           .
         </p>

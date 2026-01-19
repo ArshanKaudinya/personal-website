@@ -43,7 +43,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link href="https://api.fontshare.com/v2/css?f[]=lora@400,401,500,501&display=swap" rel="stylesheet" /> 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
       </head>
-      <body className="scroll-smooth bg-black/90 text-white font-grotesk">
+      <body className="scroll-smooth bg-[#0a0a0a] text-gray-100 antialiased">
         <GlobalLoader />
         {children}
         <Analytics />

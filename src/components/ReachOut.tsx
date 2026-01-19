@@ -26,13 +26,15 @@ const socials = [
 
 export default function ReachOut() {
   return (
-    <section id="reachout" className="mx-auto mt-6 px-1">
-      <h2 className="text-xl font-semibold mb-4 text-accent">Reach Out</h2>
-      <p className="text-gray-400 mb-6">
-        Want to connect, collaborate, or just say hi?  
-        Reach out to me anytime, I&apos;m always open to new ideas and conversations.
+    <section id="reachout" className="mx-auto mb-16">
+      <h2 className="text-2xl font-grotesk font-bold mb-6 tracking-tight flex items-center gap-2">
+        <span className="text-[#6c6499]">&gt;</span> contact
+      </h2>
+      <p className="text-gray-400 mb-6 text-sm">
+        want to connect, collaborate, or just say hi?
+        reach out anytime, i&apos;m always open to new ideas and conversations.
       </p>
-      <div className="flex flex-row gap-6">
+      <div className="flex flex-row gap-5">
         {socials.map(({ href, label, icon: Icon }) => (
           <a
             key={label}
@@ -40,9 +42,9 @@ export default function ReachOut() {
             aria-label={label}
             target={href.startsWith("mailto:") ? undefined : "_blank"}
             rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
-            className="text-gray-400 hover:text-accent transition-colors p-2 rounded-full border border-transparent hover:border-accent"
+            className="text-gray-600 hover:text-[#6c6499] transition-all duration-300"
           >
-            <Icon size={32} weight="duotone" />
+            <Icon size={24} weight="regular" />
           </a>
         ))}
       </div>

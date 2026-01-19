@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { CaretRight } from "phosphor-react";
+import { ArrowRight } from "phosphor-react";
 
 type BlogItem = {
   slug: string;
@@ -12,47 +12,80 @@ type BlogItem = {
 const BLOGS: BlogItem[] = [
   {
     slug: "building-promptly",
-    title: "Building Promptly",
-    subtitle: "Building a SaaS in College."
+    title: "building promptly",
+    subtitle: "building a saas in college."
   },
+  {
+    slug: "huffman-encoder",
+    title: "why i built a huffman encoder with rust from scratch (coming soon)",
+    subtitle: "because textbook learning is boring."
+  }
 ];
 
 export default function Blogs() {
   return (
-    <section className="mx-auto mt-10 mb-8 max-w-3xl">
-        <h2 className="text-xl font-semibold mb-4 ml-[0.1rem]">
-          Blog
+    <section className="mx-auto mb-16 max-w-3xl">
+        <h2 className="text-2xl font-grotesk font-bold mb-6 tracking-tight flex items-center gap-2">
+          <span className="text-[#6c6499]">&gt;</span> writing
         </h2>
 
-        <div className="space-y-3">
-          {BLOGS.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/blogs/${post.slug}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                group flex items-center justify-between
-                rounded-md px-4 py-3
-              hover:bg-white/2
-                border border-white/10 hover:border-white/20
-                transition-colors
-              "
-            >
-              <div className="flex-1">
-                <p className="text-sm md:text-base font-medium text-gray-200 group-hover:underline">
-                  {post.title}
-                </p>
-                {post.subtitle && (
-                  <p className="mt-0.5 text-xs md:text-sm text-gray-400">
-                    {post.subtitle}
-                  </p>
-                )}
-              </div>
+        <div className="space-y-0">
+          {BLOGS.map((post) => {
+            const isComingSoon = post.slug === "huffman-encoder";
 
-              <CaretRight className="ml-3 h-4 w-4 opacity-60 transition-all group-hover:translate-x-0.5 group-hover:opacity-100" />
-            </Link>
-          ))}
+            if (isComingSoon) {
+              return (
+                <div
+                  key={post.slug}
+                  className="
+                    flex items-center justify-between
+                    py-4 border-b border-gray-800
+                    cursor-default
+                    transition-all duration-300
+                  "
+                >
+                  <div className="flex-1">
+                    <p className="text-base font-medium text-gray-500 transition-colors duration-300">
+                      {post.title}
+                    </p>
+                    {post.subtitle && (
+                      <p className="mt-1 text-sm text-gray-500">
+                        {post.subtitle}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              );
+            }
+
+            return (
+              <Link
+                key={post.slug}
+                href={`/blogs/${post.slug}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  group flex items-center justify-between
+                  py-4 border-b border-gray-800
+                  hover:border-[#6c6499]
+                  transition-all duration-300
+                "
+              >
+                <div className="flex-1">
+                  <p className="text-base font-medium text-gray-200 group-hover:text-[#6c6499] transition-colors duration-300">
+                    {post.title}
+                  </p>
+                  {post.subtitle && (
+                    <p className="mt-1 text-sm text-gray-500">
+                      {post.subtitle}
+                    </p>
+                  )}
+                </div>
+
+                <ArrowRight className="ml-3 h-5 w-5 text-gray-600 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#6c6499]" />
+              </Link>
+            );
+          })}
         </div>
     </section>
   );

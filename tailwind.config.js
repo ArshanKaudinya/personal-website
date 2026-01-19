@@ -7,9 +7,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "#18181b",
-        accent: "#4f46e5"
+        background: "#0a0a0a",
+        accent: "#6c6499",
+        hover: "#8b7db8"
       },
+      fontFamily: {
+        'grotesk': ['Cabinet Grotesk', 'sans-serif'],
+        'mono': ['monospace']
+      }
     }
   },
   plugins: []

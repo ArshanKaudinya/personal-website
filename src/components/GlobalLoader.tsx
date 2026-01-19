@@ -55,7 +55,7 @@ export default function GlobalLoader() {
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] bg-[#191919] flex flex-col items-center justify-center transition-opacity duration-700 ${
+      className={`fixed inset-0 z-[9999] bg-[#0a0a0a] flex flex-col items-center justify-center transition-opacity duration-700 ${
         loading ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >

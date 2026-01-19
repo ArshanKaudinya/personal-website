@@ -7,27 +7,27 @@ type Project = {
   href?: string;
   date?: string;
   github?: string;
-  stack?: string[]; 
+  stack?: string[];
 };
 
 const projects: Project[] = [
   {
-    title: "Promptly",
-    desc: "A friction-less prompt engineering browser extension, completely customizable, one click rewrites to supercharge your prompts. Live and closed source with 100+ users(as of 18/11/25).",
+    title: "promptly",
+    desc: "a friction-less prompt engineering browser extension, completely customizable, one click rewrites to supercharge your prompts. live and closed source with 100+ users(as of 18/11/25).",
     href: "https://usepromptlyai.com",
     stack: ["Next.js", "Tailwind", "FastAPI", "OpenAI API", "Supabase", "Redis", "Render", "Chrome Extensions", "Polar", "Resend", "Cloudflare"],
     date: "2025",
   },
   {
-    title: "PDFhelper",
-    desc: "Full-stack AI tool for instant, privacy-focused Q&A on any PDF. Upload documents, ask questions, and get fast, accurate answers with Mixtral LLM and local vector search. Built with Next.js, FastAPI, Supabase, and Together AI.",
+    title: "pdfhelper",
+    desc: "full-stack ai tool for instant, privacy-focused q&a on any pdf. upload documents, ask questions, and get fast, accurate answers with mixtral llm and local vector search. built with next.js, fastapi, supabase, and together ai.",
     github: "https://github.com/ArshanKaudinya/PDFhelper",
     stack: ["FAISS", "Together AI", "Next.js", "React", "FastAPI", "Supabase", "Vercel", "Tailwind", "Railway"],
     date: "2025",
   },
   {
-    title: "Thriftee",
-    desc: "A full-stack second-hand marketplace built for Indian college students. Features user authentication, secure listings, multi-image uploads, real-time chat, and robust city-based filtering. Designed for scale, clarity, and trust.",
+    title: "thriftee",
+    desc: "a full-stack second-hand marketplace built for indian college students. features user authentication, secure listings, multi-image uploads, real-time chat, and robust city-based filtering. designed for scale, clarity, and trust.",
     github: "https://github.com/arshankaudinya/thriftee",
     stack: ["React", "Next.js", "Tailwind", "Supabase", "PostgreSQL"],
     date: "2024",
@@ -36,31 +36,33 @@ const projects: Project[] = [
 
 export default function ProjectsSection() {
   return (
-    <section className="w-full max-w-3xl">
-      <h2 className="text-xl font-semibold mb-4 ml-[0.1rem]">Notable Projects</h2>
-      <div className="flex flex-col gap-6">
+    <section className="w-full max-w-3xl mb-12">
+      <h2 className="text-2xl font-grotesk font-bold mb-6 tracking-tight flex items-center gap-2">
+        <span className="text-[#6c6499]">&gt;</span> projects
+      </h2>
+      <div className="flex flex-col gap-8">
         {projects.map(({ title, desc, href, date, github }) => (
           <div
             key={title}
-            className="bg-white/3 border border-white/20 rounded-xl p-6 group hover:border-accent/70 transition-colors"
+            className="group border-l-2 border-gray-800 pl-6 hover:border-[#6c6499] transition-all duration-300"
           >
-            <div className="flex flex-row items-center justify-between mb-1">
-              <div className="flex items-center gap-2">
-                <h3 className="text-lg md:text-xl font-semibold group-hover:text-accent transition">{title}</h3>
+            <div className="flex flex-row items-start justify-between mb-2">
+              <div className="flex items-baseline gap-3">
+                <h3 className="text-xl font-grotesk font-bold text-gray-100 group-hover:text-[#6c6499] transition-colors duration-300">{title}</h3>
                 {date && (
-                  <span className="text-xs text-gray-500 font-mono mt-1">{date}</span>
+                  <span className="text-xs text-gray-600 font-mono">{date}</span>
                 )}
               </div>
-              <span className="flex items-center gap-2">
+              <span className="flex items-center gap-3">
                 {github && (
                   <a
                     href={github}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="GitHub repo"
-                    className="text-gray-500 hover:text-accent transition"
+                    className="text-gray-600 hover:text-[#6c6499] transition-colors duration-300"
                   >
-                    <GithubLogo size={20} weight="duotone" />
+                    <GithubLogo size={20} weight="regular" />
                   </a>
                 )}
                 {href && (
@@ -69,26 +71,20 @@ export default function ProjectsSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Live Project"
-                    className="text-gray-500 hover:text-accent transition"
+                    className="text-gray-600 hover:text-[#6c6499] transition-colors duration-300"
                   >
-                    <ArrowSquareOut size={20} weight="duotone" />
+                    <ArrowSquareOut size={20} weight="regular" />
                   </a>
                 )}
               </span>
             </div>
-            <p className="text-gray-300 text-sm md:text-base leading-relaxed mt-1">{desc}</p>
-            {/* {stack && (
-              <div className="flex flex-wrap gap-2 mt-4">
-                {stack.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-2 py-0.5 rounded bg-gray-800/60 text-[13px] text-gray-200 border border-gray-700/60 font-mono tracking-wide"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            )} */}
+            {title === "promptly" ? (
+              <p className="text-gray-400 text-sm leading-relaxed">
+                a friction-less prompt engineering browser extension, completely customizable, one click rewrites to supercharge your prompts. <span className="underline decoration-[#6c6499] underline-offset-2">live and closed source</span> with 100+ users(as of 18/11/25).
+              </p>
+            ) : (
+              <p className="text-gray-400 text-sm leading-relaxed">{desc}</p>
+            )}
           </div>
         ))}
       </div>
