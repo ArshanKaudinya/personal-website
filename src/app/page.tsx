@@ -2,7 +2,6 @@ import ProfileSection from "@/components/ProfileSection";
 import StackIcons from "@/components/StackIcons";
 import SocialLinks from "@/components/SocialLinks";
 import ProjectsSection from "@/components/ProjectSection";
-// import BlogSection from "@/components/BlogSection";
 import AboutMe from "@/components/AboutMe";
 import WorkWithMe from "@/components/WorkWithMe";
 import ReachOut from "@/components/ReachOut";

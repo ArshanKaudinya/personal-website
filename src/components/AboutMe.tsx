@@ -9,7 +9,7 @@ export default function AboutMe() {
   function useIsBigScreen() {
     const [isBig, setIsBig] = useState(false);
     useEffect(() => {
-      const check = () => setIsBig(window.innerWidth >= 768); // md breakpoint
+      const check = () => setIsBig(window.innerWidth >= 768);
       check();
       window.addEventListener("resize", check);
       return () => window.removeEventListener("resize", check);
@@ -17,7 +17,7 @@ export default function AboutMe() {
     return isBig;
   }
   
-  // In your component
+
   const isBigScreen = useIsBigScreen();
   const collapsedHeight = isBigScreen ? "12rem" : "15.5rem";
   const [maxHeight, setMaxHeight] = useState<string>("0px");
