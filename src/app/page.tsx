@@ -6,6 +6,7 @@ import AboutMe from "@/components/AboutMe";
 import WorkWithMe from "@/components/WorkWithMe";
 import ReachOut from "@/components/ReachOut";
 import BlogSection from "@/components/BlogSection";
+import AchievementsSection from "@/components/AchievementsSection";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <div className="w-full h-px bg-gray-800 my-12" />
       <BlogSection />
       <ProjectsSection />
+      <AchievementsSection />
       <StackIcons />
       <div className="w-full h-px bg-gray-800 my-12" />
       <WorkWithMe />
