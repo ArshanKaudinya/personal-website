@@ -8,7 +8,7 @@ type Achievement = {
 const achievements: Achievement[] = [
   {
     title: "Second Runner Up — Build India '26",
-    subtitle: "national-level startup competition",
+    subtitle: "national-level hackathon by Anthropic x Replit x Lightspeed",
     date: "2026",
     prize: "$7,000",
   },
