@@ -39,7 +39,16 @@ export default function AboutMe() {
         <p className="transition-opacity duration-500 ease-out">
           <span className="font-grotesk font-bold text-accent">the only thing out of my control is consistent change.</span><br />
           <br />
-          hey, i&apos;m arshan kaudinya, i&apos;m working on a startup, tech that actually interests me,
+          hey, i&apos;m arshan kaudinya, i&apos;m working on{" "}
+          <a
+            href="https://www.plainfield-ai.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="decoration-[#6c6499] underline text-gray-300 hover:text-[#6c6499] transition-colors duration-300"
+          >
+            PlainField AI
+          </a>
+          , tech that actually interests me,
           and shaping a version of myself i can respect. i&apos;m into
           tech, philosophy, fitness and the broader project of understanding how to live well.<br />
           <br />

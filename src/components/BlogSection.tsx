@@ -24,7 +24,7 @@ const BLOGS: BlogItem[] = [
 
 export default function Blogs() {
   return (
-    <section className="mx-auto mb-16 max-w-3xl">
+    <section className="mx-auto mb-12 max-w-3xl">
         <h2 className="text-2xl font-grotesk font-bold mb-6 tracking-tight flex items-center gap-2">
           <span className="text-[#6c6499]">&gt;</span> writing
         </h2>

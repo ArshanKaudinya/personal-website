@@ -16,11 +16,11 @@ export default function Home() {
       <AboutMe />
       <div className="w-full h-px bg-gray-800 my-12" />
       <BlogSection />
+      <WorkWithMe />
       <ProjectsSection />
       <AchievementsSection />
       <StackIcons />
       <div className="w-full h-px bg-gray-800 my-12" />
-      <WorkWithMe />
       <ReachOut />
       <footer className="text-center text-gray-700 text-xs font-mono mt-16">
         © {new Date().getFullYear()} arshan kaudinya
