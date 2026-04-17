@@ -10,6 +10,14 @@ type WorkEntry = {
 
 const workEntries: WorkEntry[] = [
   {
+    company: "YourToken",
+    role: "SDE Intern",
+    date: "February 2026 – Present",
+    bullets: [
+      "Migrating the product backend from TypeScript to Rust, driving major performance optimizations across the stack.",
+    ],
+  },
+  {
     company: "PlainField AI",
     role: "Founder",
     date: "December 2025 – Present",
