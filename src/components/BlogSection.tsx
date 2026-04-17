@@ -17,7 +17,7 @@ const BLOGS: BlogItem[] = [
   },
   {
     slug: "huffman-encoder",
-    title: "why i built a huffman encoder with rust from scratch (coming soon)",
+    title: "why i built a huffman encoder with rust from scratch",
     subtitle: "because textbook learning is boring."
   }
 ];
@@ -31,33 +31,6 @@ export default function Blogs() {
 
         <div className="space-y-0">
           {BLOGS.map((post) => {
-            const isComingSoon = post.slug === "huffman-encoder";
-
-            if (isComingSoon) {
-              return (
-                <div
-                  key={post.slug}
-                  className="
-                    flex items-center justify-between
-                    py-4 border-b border-gray-800
-                    cursor-default
-                    transition-all duration-300
-                  "
-                >
-                  <div className="flex-1">
-                    <p className="text-base font-medium text-gray-500 transition-colors duration-300">
-                      {post.title}
-                    </p>
-                    {post.subtitle && (
-                      <p className="mt-1 text-sm text-gray-500">
-                        {post.subtitle}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              );
-            }
-
             return (
               <Link
                 key={post.slug}
