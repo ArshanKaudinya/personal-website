@@ -9,7 +9,9 @@ export default function GlobalLoader() {
     let pending = 0;
 
     const waitForImages = () => {
-      const images = Array.from(document.images);
+      const images = Array.from(document.images).filter(
+        (img) => img.loading !== "lazy"
+      );
       pending += images.length;
 
       if (images.length === 0) return;
