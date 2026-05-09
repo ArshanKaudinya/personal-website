@@ -17,13 +17,18 @@ const achievements: Achievement[] = [
     subtitle: "smart india hackathon internal selection round",
     date: "2025",
   },
+  {
+    title: "Vice Chairperson — IEEE Computer Society",
+    subtitle: "leading club operations & events",
+    date: "2026",
+  },
 ];
 
 export default function AchievementsSection() {
   return (
     <section className="w-full max-w-3xl mb-12">
       <h2 className="text-2xl font-grotesk font-bold mb-6 tracking-tight flex items-center gap-2">
-        <span className="text-[#6c6499]">&gt;</span> achievements
+        <span className="text-[#6c6499]">&gt;</span> achievements and misc.
       </h2>
       <div className="flex flex-col gap-6">
         {achievements.map(({ title, subtitle, date, prize }) => (

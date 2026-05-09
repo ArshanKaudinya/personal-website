@@ -10,11 +10,11 @@ type WorkEntry = {
 
 const workEntries: WorkEntry[] = [
   {
-    company: "YourToken",
-    role: "SDE Intern",
-    date: "February 2026 – Present",
+    company: "AskSoca",
+    role: "Founding Engineer (Intern)",
+    date: "April 2026 – Present",
     bullets: [
-      "Migrating the product backend from TypeScript to Rust, driving major performance optimizations across the stack.",
+      "Wearing every hat across the stack: full-stack engineering, AI, ops, and analytics.",
     ],
   },
   {
@@ -24,6 +24,14 @@ const workEntries: WorkEntry[] = [
     bullets: [
       "Started as Promptly, a Chrome extension that rewrote your prompts on the fly — that early signal led to PlainField AI.",
       "Building the first LLM gateway that autonomously improves prompts: routes API calls, runs statistical analytics to find which prompts are burning money, then A/B tests auto-generated variants in production and promotes the winners — one-line integration, zero code changes.",
+    ],
+  },
+  {
+    company: "YourToken",
+    role: "SDE Intern",
+    date: "February 2026 – May 2026",
+    bullets: [
+      "Migrated the product backend from TypeScript to Rust, driving major performance optimizations across the stack.",
     ],
   },
   {

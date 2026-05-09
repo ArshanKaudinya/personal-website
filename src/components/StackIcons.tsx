@@ -1,32 +1,33 @@
 const skills = [
   // Languages
+  { label: "rust", icon: "devicon-rust-original" },
+  { label: "typescript", icon: "devicon-typescript-plain" },
   { label: "python", icon: "devicon-python-plain" },
   { label: "c++", icon: "devicon-cplusplus-plain" },
-  { label: "c", icon: "devicon-c-original" },
-  { label: "java", icon: "devicon-java-plain" },
   { label: "javascript", icon: "devicon-javascript-plain" },
-  { label: "typescript", icon: "devicon-typescript-plain" },
+  { label: "java", icon: "devicon-java-plain" },
+  { label: "c", icon: "devicon-c-original" },
 
   // Frameworks
-  { label: "react", icon: "devicon-react-original" },
   { label: "next.js", icon: "devicon-nextjs-original" },
+  { label: "react", icon: "devicon-react-original" },
+  { label: "fastapi", icon: "devicon-fastapi-plain" },
   { label: "tailwind", icon: "devicon-tailwindcss-plain" },
   { label: "django", icon: "devicon-django-plain" },
-  { label: "fastapi", icon: "devicon-fastapi-plain" },
   { label: "express", icon: "devicon-express-original" },
 
   // Tools & Platforms
-  { label: "git", icon: "devicon-git-plain" },
-  { label: "github", icon: "devicon-github-original" },
-  { label: "supabase", icon: "devicon-supabase-plain" },
-  { label: "postgresql", icon: "devicon-postgresql-plain" },
-  { label: "mongodb", icon: "devicon-mongodb-plain" },
-  { label: "railway", icon: "devicon-railway-plain" },
-  { label: "redis", icon: "devicon-redis-plain" },
-  { label: "vercel", icon: "devicon-vercel-original" },
-  { label: "firebase", icon: "devicon-firebase-plain" },
   { label: "docker", icon: "devicon-docker-plain" },
+  { label: "postgresql", icon: "devicon-postgresql-plain" },
+  { label: "redis", icon: "devicon-redis-plain" },
+  { label: "supabase", icon: "devicon-supabase-plain" },
+  { label: "vercel", icon: "devicon-vercel-original" },
   { label: "cloudflare", icon: "devicon-cloudflare-plain" },
+  { label: "mongodb", icon: "devicon-mongodb-plain" },
+  { label: "firebase", icon: "devicon-firebase-plain" },
+  { label: "railway", icon: "devicon-railway-plain" },
+  { label: "github", icon: "devicon-github-original" },
+  { label: "git", icon: "devicon-git-plain" },
   { label: "postman", icon: "devicon-postman-plain" },
 ];
 

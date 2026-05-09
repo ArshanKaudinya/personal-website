@@ -15,8 +15,8 @@ export default function Home() {
       <SocialLinks />
       <AboutMe />
       <div className="w-full h-px bg-gray-800 my-12" />
-      <BlogSection />
       <WorkWithMe />
+      <BlogSection />
       <ProjectsSection />
       <AchievementsSection />
       <StackIcons />

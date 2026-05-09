@@ -12,6 +12,13 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: "encoder-sim",
+    desc: "end-to-end file transfer system in rust: huffman compression with canonical codes, bit-level i/o, framed binary protocol with crc32 checksums, packetization, a hostile network simulator (latency, jitter, loss, reordering), and an in-order reassembler. five concurrent threads connected by bounded crossbeam channels.",
+    github: "https://github.com/ArshanKaudinya/Huffman-encoder-sim",
+    stack: ["Rust", "Crossbeam", "ChaCha8", "CRC32"],
+    date: "2026",
+  },
+  {
     title: "promptly",
     desc: "a friction-less prompt engineering browser extension, completely customizable, one click rewrites to supercharge your prompts. live and closed source with 100+ users(as of 18/11/25).",
     href: "https://usepromptlyai.com",
