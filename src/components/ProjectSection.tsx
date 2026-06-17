@@ -108,7 +108,7 @@ export default function ProjectsSection() {
                     >
                       view
                       <span style={{ fontStyle: "normal", fontSize: "13px" }}>
-                        ↗
+                        {"\u2197\uFE0E"}
                       </span>
                     </a>
                   )}
