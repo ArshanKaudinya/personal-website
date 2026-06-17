@@ -1,5 +1,8 @@
 "use client";
 import { useState } from "react";
+import SectionLabel from "@/components/SectionLabel";
+import SectionKeywords from "@/components/SectionKeywords";
+import Collapse from "@/components/Collapse";
 
 type WorkEntry = {
   company: string;
@@ -11,88 +14,175 @@ type WorkEntry = {
 const workEntries: WorkEntry[] = [
   {
     company: "AskSoca",
-    role: "Founding Engineer (Intern)",
-    date: "April 2026 – Present",
+    role: "founding engineer (intern)",
+    date: "2026 — present",
     bullets: [
-      "Wearing every hat across the stack: full-stack engineering, AI, ops, and analytics.",
+      "wearing every hat across the stack: full-stack engineering, applied AI, ops, and the analytics that keep us honest about what is and isn’t working.",
     ],
   },
   {
     company: "PlainField AI",
-    role: "Founder",
-    date: "December 2025 – Present",
+    role: "founder",
+    date: "2025 — present",
     bullets: [
-      "Started as Promptly, a Chrome extension that rewrote your prompts on the fly — that early signal led to PlainField AI.",
-      "Building the first LLM gateway that autonomously improves prompts: routes API calls, runs statistical analytics to find which prompts are burning money, then A/B tests auto-generated variants in production and promotes the winners — one-line integration, zero code changes.",
+      "started as Promptly, a Chrome extension that rewrote prompts on the fly — that early signal led to PlainField AI.",
+      "building an LLM gateway that improves prompts on its own: it routes calls, surfaces the ones quietly burning money, then A/B-tests stronger variants in production and promotes the winners — a one-line integration with zero code changes.",
     ],
   },
   {
     company: "YourToken",
-    role: "SDE Intern",
-    date: "February 2026 – May 2026",
+    role: "software engineer, intern",
+    date: "2026",
     bullets: [
-      "Migrated the product backend from TypeScript to Rust, driving major performance optimizations across the stack.",
+      "migrated the product backend from TypeScript to Rust, driving major performance optimizations across the stack.",
     ],
   },
   {
     company: "Forvis Mazars",
-    role: "Software Engineering Intern",
-    date: "May 2025 – June 2025",
+    role: "software engineer, intern",
+    date: "2025",
     bullets: [
-      "Worked with the Digital, Trust & Transformation team on internal tooling.",
+      "built internal tooling for the Digital, Trust & Transformation team — small, sharp utilities that quietly removed daily friction.",
     ],
   },
 ];
 
 export default function WorkWithMe() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="mx-auto mb-12">
-      <h2 className="text-2xl font-grotesk font-bold mb-6 tracking-tight flex items-center gap-2">
-        <span className="text-[#6c6499]">&gt;</span> work
-      </h2>
-      <div className="flex flex-col gap-6">
-        {workEntries.map(({ company, role, date, bullets }, i) => {
-          const isOpen = openIndex === i;
-          return (
-            <button
-              key={company}
-              onClick={() => setOpenIndex(isOpen ? null : i)}
-              className="group text-left w-full border-l-2 border-gray-800 pl-6 hover:border-[#6c6499] transition-all duration-300 cursor-pointer"
-            >
-              <div className="flex items-baseline justify-between gap-3">
-                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                  <span className="font-grotesk font-bold text-gray-100 group-hover:text-[#6c6499] transition-colors duration-300">
-                    {company}
-                  </span>
-                  <span className="text-xs text-gray-600 font-mono">{date}</span>
-                </div>
-                <span className="text-[#6c6499] text-xs font-mono flex-shrink-0">
-                  {isOpen ? "–" : "+"}
-                </span>
-              </div>
-              <p className="text-xs text-gray-500 font-mono mt-0.5">{role}</p>
-              <div
+    <section id="work" className="j-section">
+      <SectionLabel>work</SectionLabel>
+      <div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          {workEntries.map(({ company, role, date, bullets }, i) => {
+            const isOpen = openIndex === i;
+            return (
+              <button
+                key={company}
+                data-reveal-item
+                onClick={() => setOpenIndex(isOpen ? null : i)}
+                aria-expanded={isOpen}
                 style={{
-                  maxHeight: isOpen ? "200px" : "0px",
-                  transition: "max-height 900ms cubic-bezier(0.22,1,0.36,1)",
+                  textAlign: "left",
+                  width: "100%",
+                  background: "transparent",
+                  border: "none",
+                  borderTop: "1px solid var(--border)",
+                  padding: "18px 0",
+                  cursor: "pointer",
                 }}
-                className="overflow-hidden"
               >
-                <ul className="mt-3 space-y-2">
-                  {bullets.map((bullet, j) => (
-                    <li key={j} className="flex items-start gap-2">
-                      <span className="text-[#6c6499] mt-0.5 flex-shrink-0 select-none">–</span>
-                      <span className="text-gray-400 text-sm leading-relaxed">{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </button>
-          );
-        })}
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "baseline",
+                    justifyContent: "space-between",
+                    gap: "14px",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "baseline",
+                      gap: "12px",
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontFamily: "var(--font-display)",
+                        fontWeight:
+                          "var(--name-weight)" as React.CSSProperties["fontWeight"],
+                        fontSize: "18px",
+                        color: "var(--text)",
+                      }}
+                    >
+                      {company}
+                    </span>
+                    <span
+                      style={{
+                        fontFamily: "var(--font-serif)",
+                        fontStyle: "italic",
+                        fontSize: "14px",
+                        color: "var(--muted)",
+                      }}
+                    >
+                      {role}
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "13px",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontSize: "12px",
+                        color: "var(--faint)",
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      {date}
+                    </span>
+                    <span
+                      style={{
+                        color: "var(--accent)",
+                        display: "inline-flex",
+                        transition: "transform .35s ease",
+                        transform: isOpen ? "rotate(180deg)" : "none",
+                      }}
+                    >
+                      <svg
+                        width="13"
+                        height="13"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.6"
+                        aria-hidden="true"
+                      >
+                        <path d="M4 6l4 4 4-4" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <Collapse open={isOpen} duration={480}>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "9px",
+                      paddingTop: "14px",
+                    }}
+                  >
+                    {bullets.map((bullet, j) => (
+                      <p
+                        key={j}
+                        style={{
+                          margin: 0,
+                          color: "var(--muted)",
+                          fontSize: "14.5px",
+                          lineHeight: 1.7,
+                          maxWidth: "540px",
+                        }}
+                      >
+                        {bullet}
+                      </p>
+                    ))}
+                  </div>
+                </Collapse>
+              </button>
+            );
+          })}
+          <div style={{ borderTop: "1px solid var(--border)" }} />
+        </div>
       </div>
+      <SectionKeywords items={["applied ai", "optimisations", "founding agency"]} />
     </section>
   );
 }

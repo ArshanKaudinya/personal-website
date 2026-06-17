@@ -1,15 +1,42 @@
 import "./globals.css";
 import { ReactNode } from "react";
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/next"
-import GlobalLoader from "@/components/GlobalLoader"
+import localFont from "next/font/local";
+import { Lora } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import GlobalLoader from "@/components/GlobalLoader";
+import SiteNav from "@/components/SiteNav";
+import AccessibilityWidget from "@/components/AccessibilityWidget";
+
+const cabinetGrotesk = localFont({
+  src: [
+    { path: "../fonts/cabinet-grotesk/cabinet-grotesk-400.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/cabinet-grotesk/cabinet-grotesk-500.woff2", weight: "500", style: "normal" },
+    { path: "../fonts/cabinet-grotesk/cabinet-grotesk-700.woff2", weight: "700", style: "normal" },
+    { path: "../fonts/cabinet-grotesk/cabinet-grotesk-800.woff2", weight: "800", style: "normal" },
+  ],
+  variable: "--font-cabinet",
+  display: "swap",
+});
+
+const lora = Lora({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-lora",
+  display: "swap",
+});
+
+const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}document.documentElement.classList.add('js');})();`;
+
+const a11yScript = `(function(){try{var p=JSON.parse(localStorage.getItem('a11y')||'{}');var m={font:'a11y-font',spacing:'a11y-spacing',large:'a11y-large',links:'a11y-links',mask:'a11y-mask'};var r=document.documentElement;for(var k in m){if(p[k])r.classList.add(m[k]);}}catch(e){}})();`;
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://arshankaudinya.com"),
   title: "Arshan Kaudinya",
-  description:
-    "curious what Arshan is up to?",
-  icons: { 
-    icon: "/pfp.jpg" 
+  description: "curious what Arshan is up to?",
+  icons: {
+    icon: "/pfp.jpeg",
   },
   openGraph: {
     title: "Arshan Kaudinya",
@@ -17,38 +44,55 @@ export const metadata: Metadata = {
     siteName: "Arshan Kaudinya",
     images: [
       {
-        url: "https://vsqruzzlzbuyzgatbzeo.supabase.co/storage/v1/object/sign/misc/pfp.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8zNGNiZDIzMi1iMjhhLTQwZDktOGYxNS1iNDMxMDQxMTJiNWYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtaXNjL3BmcC5qcGciLCJpYXQiOjE3NTQxMTgwNTEsImV4cCI6MTg0ODcyNjA1MX0.eavAC-EHwBiy4_--Gw9_cpwJRvvKf0IoOzy4WH45mRE",
-        width: 1200,
-        height: 630,
-        alt: "Arshan Kaudinya"
-      }
+        url: "/pfp.jpeg",
+        width: 747,
+        height: 996,
+        alt: "Arshan Kaudinya",
+      },
     ],
     locale: "en_US",
-    type: "website"
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Arshan Kaudinya",
-    description:
-      "curious what Arshan is up to?",
-    images: ["https://vsqruzzlzbuyzgatbzeo.supabase.co/storage/v1/object/sign/misc/pfp.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8zNGNiZDIzMi1iMjhhLTQwZDktOGYxNS1iNDMxMDQxMTJiNWYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtaXNjL3BmcC5qcGciLCJpYXQiOjE3NTQxMTgwNTEsImV4cCI6MTg0ODcyNjA1MX0.eavAC-EHwBiy4_--Gw9_cpwJRvvKf0IoOzy4WH45mRE"]
-  }
+    description: "curious what Arshan is up to?",
+    images: ["/pfp.jpeg"],
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${cabinetGrotesk.variable} ${lora.variable}`}
+      suppressHydrationWarning
+    >
       <head>
-        <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@300,400,500,700&display=swap" rel="stylesheet" />
-        <link href="https://api.fontshare.com/v2/css?f[]=lora@400,401,500,501&display=swap" rel="stylesheet" /> 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script dangerouslySetInnerHTML={{ __html: a11yScript }} />
       </head>
-      <body className="scroll-smooth bg-[#0a0a0a] text-gray-100 antialiased">
+      <body className="scroll-smooth antialiased">
         <GlobalLoader />
-        {children}
+        <div className="j-container">
+          <SiteNav />
+          {children}
+          <footer
+            className="mt-18 border-t pt-7 text-left"
+            style={{
+              borderColor: "var(--border)",
+              fontFamily: "var(--font-serif)",
+              fontStyle: "italic",
+              fontSize: "14px",
+              color: "var(--faint)",
+            }}
+          >
+            © {new Date().getFullYear()} · arshan kaudinya
+          </footer>
+        </div>
+        <AccessibilityWidget />
         <Analytics />
       </body>
     </html>
   );
 }
-

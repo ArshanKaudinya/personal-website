@@ -1,53 +1,31 @@
-'use client';
-import { GithubLogo, LinkedinLogo, TwitterLogo, Envelope } from "phosphor-react";
-
-const socials = [
-  {
-    href: "https://github.com/arshankaudinya",
-    label: "GitHub",
-    icon: GithubLogo,
-  },
-  {
-    href: "https://www.linkedin.com/in/arshan-kaudinya-54b333255/",
-    label: "LinkedIn",
-    icon: LinkedinLogo,
-  },
-  {
-    href: "https://x.com/arshankaudinya",
-    label: "X (Twitter)",
-    icon: TwitterLogo,
-  },
-  {
-    href: "mailto:arshankaudinya@gmail.com",
-    label: "Email",
-    icon: Envelope,
-  },
-];
+import SectionLabel from "@/components/SectionLabel";
+import SectionKeywords from "@/components/SectionKeywords";
+import Socials from "@/components/Socials";
 
 export default function ReachOut() {
   return (
-    <section id="reachout" className="mx-auto mb-16">
-      <h2 className="text-2xl font-grotesk font-bold mb-6 tracking-tight flex items-center gap-2">
-        <span className="text-[#6c6499]">&gt;</span> contact
-      </h2>
-      <p className="text-gray-400 mb-6 text-sm">
-        want to connect, collaborate, or just say hi?
-        reach out anytime, i&apos;m always open to new ideas and conversations.
-      </p>
-      <div className="flex flex-row gap-5">
-        {socials.map(({ href, label, icon: Icon }) => (
-          <a
-            key={label}
-            href={href}
-            aria-label={label}
-            target={href.startsWith("mailto:") ? undefined : "_blank"}
-            rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
-            className="text-gray-600 hover:text-[#6c6499] transition-all duration-300"
-          >
-            <Icon size={24} weight="regular" />
-          </a>
-        ))}
+    <section id="contact" className="j-section">
+      <SectionLabel>say hello</SectionLabel>
+      <div data-reveal-item>
+        <p
+          style={{
+            margin: "0 0 22px",
+            fontFamily: "var(--font-serif)",
+            fontSize: "clamp(1.1875rem, 2vw, 1.3125rem)",
+            fontStyle: "italic",
+            color: "var(--muted)",
+            lineHeight: 1.6,
+            maxWidth: "460px",
+          }}
+        >
+          want to build something, collaborate, or just trade ideas? my inbox is
+          always open.
+        </p>
+        <div style={{ color: "var(--faint)" }}>
+          <Socials />
+        </div>
       </div>
+      <SectionKeywords items={["collaborate"]} />
     </section>
   );
 }

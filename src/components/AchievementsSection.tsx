@@ -1,3 +1,6 @@
+import SectionLabel from "@/components/SectionLabel";
+import SectionKeywords from "@/components/SectionKeywords";
+
 type Achievement = {
   title: string;
   subtitle: string;
@@ -7,18 +10,18 @@ type Achievement = {
 
 const achievements: Achievement[] = [
   {
-    title: "Second Runner Up — Build India '26",
-    subtitle: "national-level hackathon by Anthropic x Replit x Lightspeed",
+    title: "second runner-up — build india ’26",
+    subtitle: "national hackathon by Anthropic × Replit × Lightspeed, 800+ teams",
     date: "2026",
     prize: "$7,000",
   },
   {
-    title: "Top 50 / 800 — SIH Internal '25",
+    title: "top 50 of 800 — sih internal ’25",
     subtitle: "smart india hackathon internal selection round",
     date: "2025",
   },
   {
-    title: "Vice Chairperson — IEEE Computer Society",
+    title: "vice chairperson — ieee computer society",
     subtitle: "leading club operations & events",
     date: "2026",
   },
@@ -26,29 +29,61 @@ const achievements: Achievement[] = [
 
 export default function AchievementsSection() {
   return (
-    <section className="w-full max-w-3xl mb-12">
-      <h2 className="text-2xl font-grotesk font-bold mb-6 tracking-tight flex items-center gap-2">
-        <span className="text-[#6c6499]">&gt;</span> achievements and misc.
-      </h2>
-      <div className="flex flex-col gap-6">
-        {achievements.map(({ title, subtitle, date, prize }) => (
-          <div
-            key={title}
-            className="group border-l-2 border-gray-800 pl-6 hover:border-[#6c6499] transition-all duration-300"
-          >
-            <div className="flex items-baseline gap-3 mb-1">
-              <h3 className="text-base font-grotesk font-bold text-gray-100 group-hover:text-[#6c6499] transition-colors duration-300">
-                {title}
-              </h3>
-              {prize && (
-                <span className="text-sm font-mono text-[#6c6499]">· {prize}</span>
-              )}
-              <span className="text-xs text-gray-600 font-mono">{date}</span>
+    <section id="highlights" className="j-section">
+      <SectionLabel>highlights</SectionLabel>
+      <div>
+        <div style={{ display: "flex", flexDirection: "column", gap: "22px" }}>
+          {achievements.map(({ title, subtitle, date, prize }) => (
+            <div key={title} data-reveal-item>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "baseline",
+                  gap: "11px",
+                  flexWrap: "wrap",
+                }}
+              >
+                <h3
+                  style={{
+                    margin: 0,
+                    fontFamily: "var(--font-display)",
+                    fontWeight:
+                      "var(--name-weight)" as React.CSSProperties["fontWeight"],
+                    fontSize: "17px",
+                    color: "var(--text)",
+                  }}
+                >
+                  {title}
+                </h3>
+                {prize && (
+                  <span
+                    style={{
+                      fontFamily: "var(--font-serif)",
+                      fontStyle: "italic",
+                      fontSize: "15px",
+                      color: "var(--accent)",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {prize}
+                  </span>
+                )}
+              </div>
+              <p
+                style={{
+                  margin: "5px 0 0",
+                  fontSize: "14px",
+                  color: "var(--muted)",
+                  lineHeight: 1.6,
+                }}
+              >
+                {subtitle} <span style={{ color: "var(--faint)" }}>· {date}</span>
+              </p>
             </div>
-            <p className="text-sm text-gray-400 font-mono">{subtitle}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
+      <SectionKeywords items={["competition", "leadership"]} />
     </section>
   );
 }

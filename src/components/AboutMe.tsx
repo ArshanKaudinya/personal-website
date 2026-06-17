@@ -1,114 +1,105 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
-import { ArrowDown } from "phosphor-react";
+import { useState } from "react";
+import SectionLabel from "@/components/SectionLabel";
+import SectionKeywords from "@/components/SectionKeywords";
+import Collapse from "@/components/Collapse";
 
 export default function AboutMe() {
   const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  function useIsBigScreen() {
-    const [isBig, setIsBig] = useState(false);
-    useEffect(() => {
-      const check = () => setIsBig(window.innerWidth >= 768);
-      check();
-      window.addEventListener("resize", check);
-      return () => window.removeEventListener("resize", check);
-    }, []);
-    return isBig;
-  }
-  
-
-  const isBigScreen = useIsBigScreen();
-  const collapsedHeight = isBigScreen ? "12rem" : "15.5rem";
-  const [maxHeight, setMaxHeight] = useState<string>("0px");
-  useEffect(() => {
-    if (ref.current) setMaxHeight(`${ref.current.scrollHeight}px`);
-  }, []);
 
   return (
-    <section className="mx-auto mb-12 text-gray-300 text-sm md:text-base leading-relaxed">
-      <div
-        ref={ref}
-        style={{
-          maxHeight: open ? maxHeight : collapsedHeight,
-          transition: "max-height 800ms cubic-bezier(0.22,1,0.36,1)",
-          willChange: "max-height, opacity, transform"
-        }}
-        className="relative overflow-hidden"
-      >
-        <p className="transition-opacity duration-500 ease-out">
-          <span className="font-grotesk font-bold text-accent">the only thing out of my control is consistent change.</span><br />
-          <br />
-          hey, i&apos;m arshan kaudinya, i&apos;m working on{" "}
-          <a
-            href="https://www.plainfield-ai.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="decoration-[#6c6499] underline text-gray-300 hover:text-[#6c6499] transition-colors duration-300"
+    <section id="about" className="j-section">
+      <SectionLabel>about</SectionLabel>
+      <div data-reveal-item>
+        <Collapse open={open} collapsedHeight={170} fadeMask duration={560}>
+          <p
+            style={{
+              margin: 0,
+              fontFamily: "var(--font-serif)",
+              fontSize: "clamp(1.1875rem, 2vw, 1.3125rem)",
+              lineHeight: 1.6,
+              color: "var(--text)",
+              fontWeight: 500,
+            }}
           >
-            PlainField AI
-          </a>
-          , tech that actually interests me,
-          and shaping a version of myself i can respect. i&apos;m into
-          tech, philosophy, fitness and the broader project of understanding how to live well.<br />
-          <br />
-          everyone seems to be{" "}
-          <span className="italic">&quot;building the next big thing&quot;</span>
-          &nbsp; i&apos;m building the next big me.<br />
-          i&apos;m driven by the need to outdo who i was yesterday. more than money or status, what matters to me is the person i&apos;m becoming.<br />
-          <br />
-          except the narcissistic tendencies, i do genuinely love to talk to new people, i love to
-          learn from them, see the world through their eyes and understand how
-          their universe works. everyone lives differently beautiful lives, i
-          want to be a part of them all.<br />
-        </p>
+            the only thing out of my control is consistent change.
+          </p>
+          <p style={paragraph}>
+            hey, i&rsquo;m arshan kaudinya, i&rsquo;m working on tech that
+            actually interests me, and shaping a version of myself i can
+            respect. i&rsquo;m into tech, philosophy, fitness and the broader
+            project of understanding how to live well.
+          </p>
+          <p style={paragraph}>
+            everyone seems to be{" "}
+            <span style={{ fontStyle: "italic" }}>
+              &ldquo;building the next big thing&rdquo;
+            </span>{" "}
+            — i&rsquo;m building the next big me. i&rsquo;m driven by the need to
+            outdo who i was yesterday. more than money or status, what matters to
+            me is the person i&rsquo;m becoming.
+          </p>
+          <p style={paragraph}>
+            except the narcissistic tendencies, i do genuinely love to talk to
+            new people, i love to learn from them, see the world through their
+            eyes and understand how their universe works. everyone lives
+            differently beautiful lives, i want to be a part of them all.
+          </p>
+        </Collapse>
 
-        {!open && (
-          <div
-            className="
-              pointer-events-none absolute inset-x-0 bottom-0
-              h-20
-              bg-gradient-to-b from-transparent via-[#0a0a0a]/50 to-[#0a0a0a]
-              transition-opacity duration-500
-            "
-          />
-        )}
-        {!open && (
-          <button
-            onClick={() => setOpen(true)}
-            aria-expanded={open}
-            className="
-              group absolute bottom-1 left-1/2 -translate-x-1/2 z-20
-              px-4 py-1.5 text-gray-400 text-xs font-medium
-              border border-gray-800 bg-[#0a0a0a] hover:border-[#6c6499] hover:text-[#6c6499]
-              transition-all duration-300 ease-out
-              cursor-pointer
-              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6c6499]/30
-              flex items-center gap-1
-            "
-          >
-            <span>read more</span>
-            <ArrowDown className="h-3 w-3 flex-shrink-0" />
-          </button>
-        )}
-      </div>
-
-      {open && (
         <button
-          onClick={() => setOpen(false)}
+          onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
-          className="
-            group mx-auto mt-3 flex items-center gap-1 px-4 py-1.5
-            text-gray-400 text-xs font-medium cursor-pointer
-            border border-gray-800 bg-[#0a0a0a] hover:border-[#6c6499] hover:text-[#6c6499]
-            transition-all duration-300 ease-out
-            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6c6499]/30
-          "
+          className="j-outline-btn"
+          style={{
+            margin: "18px 0 0",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px",
+            fontFamily: "var(--font-body)",
+            fontSize: "12.5px",
+            fontWeight: 500,
+            letterSpacing: ".01em",
+            color: "var(--muted)",
+            background: "transparent",
+            border: "1px solid var(--border)",
+            borderRadius: "8px",
+            padding: "7px 15px",
+            cursor: "pointer",
+            transition: "all .25s ease",
+            whiteSpace: "nowrap",
+          }}
         >
-          show less
-          <ArrowDown className="rotate-180 h-3 w-3 flex-shrink-0" />
+          {open ? "show less" : "read more"}
+          <span
+            style={{
+              display: "inline-flex",
+              transition: "transform .35s ease",
+              transform: open ? "rotate(180deg)" : "none",
+            }}
+          >
+            <svg
+              width="11"
+              height="11"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.7"
+              aria-hidden="true"
+            >
+              <path d="M4 6l4 4 4-4" />
+            </svg>
+          </span>
         </button>
-      )}
+      </div>
+      <SectionKeywords items={["ambition", "curiosity", "people"]} />
     </section>
   );
 }
+
+const paragraph: React.CSSProperties = {
+  margin: "16px 0 0",
+  fontSize: "16px",
+  lineHeight: 1.8,
+  color: "var(--muted)",
+};
