@@ -17,7 +17,7 @@ const workEntries: WorkEntry[] = [
     role: "founding engineer (intern)",
     date: "2026 — present",
     bullets: [
-      "wearing every hat across the stack: full-stack engineering, applied AI, ops, and the analytics that keep us honest about what is and isn’t working.",
+      "full stack, ai integration, voice agents, devops, analytics and product",
     ],
   },
   {
